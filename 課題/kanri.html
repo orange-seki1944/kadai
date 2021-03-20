@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>課題</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        let j = 0;
+
+        function WordViewSled1() {
+
+        let Word = document.getElementById("word").value;
+
+        window.localStorage.setItem(j, Word);
+
+        let View = document.getElementById("view").innerHTML;
+
+        let WordView = View + Word + "<br>";
+
+        document.getElementById("view").innerHTML = WordView;
+
+        document.getElementById("word").value = "";
+
+        document.getElementById("word").focus();
+
+        j++;
+        }
+
+        function Erace(){
+          document.getElementById("view").innerHTML = "";
+        }
+
+    </script>
+    <input type = "text" value = "" id = "word" style = "width :400px; font-size :110%;">
+    <input type = "button" value = "投稿" id = "btn" style = "font-size :110%;" onClick = 'WordViewSled1();'>
+    <input type = "button" value = "削除" id = "btn" style = "font-size :110%;" onClick = 'erace()'>
+    <p id ="view" value = "" style ="width :800px; height :400px; background-color :#f9f9f9; overflow :scroll;"></p>
+</body>
+</html>
